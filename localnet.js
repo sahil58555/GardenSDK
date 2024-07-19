@@ -75,8 +75,8 @@ const btcToWBTC = async (bitcoinWallet, evmWallet, signer) => {
     signer: signer,
   });
   const wallets = {
-    [Chains.bitcoin_testnet]: bitcoinWallet,
-    [Chains.ethereum_sepolia]: evmWallet,
+    [Chains.bitcoin_regtest]: bitcoinWallet,
+    [Chains.ethereum_localnet]: evmWallet,
   };
 
   const garden = new GardenJS(orderbook, wallets);
@@ -85,8 +85,8 @@ const btcToWBTC = async (bitcoinWallet, evmWallet, signer) => {
   const receiveAmount = (1 - 0.3 / 100) * sendAmount;
 
   const orderId = await garden.swap(
-    Assets.bitcoin_testnet.BTC,
-    Assets.ethereum_sepolia.WBTC,
+    Assets.bitcoin_regtest.BTC,
+    Assets.ethereum_localnet.WBTC,
     sendAmount,
     receiveAmount
   );
@@ -117,8 +117,8 @@ const wbtcToBTC = async (bitcoinWallet, evmWallet, signer) => {
     signer: signer,
   });
   const wallets = {
-    [Chains.bitcoin_testnet]: bitcoinWallet,
-    [Chains.ethereum_sepolia]: evmWallet,
+    [Chains.bitcoin_regtest]: bitcoinWallet,
+    [Chains.ethereum_localnet]: evmWallet,
   };
 
   const garden = new GardenJS(orderbook, wallets);
@@ -127,8 +127,8 @@ const wbtcToBTC = async (bitcoinWallet, evmWallet, signer) => {
   const receiveAmount = (1 - 0.3 / 100) * sendAmount;
 
   const orderId = await garden.swap(
-    Assets.ethereum_sepolia.WBTC,
-    Assets.bitcoin_testnet.BTC,
+    Assets.ethereum_localnet.WBTC,
+    Assets.bitcoin_regtest.BTC,
     sendAmount,
     receiveAmount
   );
