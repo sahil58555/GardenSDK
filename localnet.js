@@ -34,12 +34,12 @@ async function main() {
     "Please enter Sepolia testnet private key: "
   );
 
-  const provider = new BitcoinProvider(BitcoinNetwork.Testnet);
+  const provider = new BitcoinProvider(BitcoinNetwork.Regtest);
   const privateKey = BTC_PRIVATE_KEY;
 
   const bitcoinWallet = BitcoinWallet.fromPrivateKey(privateKey, provider);
 
-  const evmProvider = new JsonRpcProvider("https://rpc.sepolia.org");
+  const evmProvider = new JsonRpcProvider("http://localhost:8545");
   const evmPrivateKey = EVM_PRIVATE_KEY;
 
   const signer = new Wallet(evmPrivateKey, evmProvider);
@@ -72,7 +72,6 @@ async function main() {
 
 const btcToWBTC = async (bitcoinWallet, evmWallet, signer) => {
   const orderbook = await Orderbook.init({
-    url: TESTNET_ORDERBOOK_API,
     signer: signer,
   });
   const wallets = {
