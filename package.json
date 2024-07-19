@@ -1,0 +1,17 @@
+{
+  "name": "gardensdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "localnet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@catalogfi/wallets": "^0.2.45",
+    "@gardenfi/core": "^0.1.15",
+    "@gardenfi/orderbook": "^0.1.10",
+    "dotenv": "^16.4.5"
+  }
+}
