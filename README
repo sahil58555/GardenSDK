@@ -1,0 +1,11 @@
+Overview
+This project is designed to interact with the Core Blockchain Testnet. Follow the instructions below to set up and run the project on the testnet.
+
+Prerequisites
+Node.js: Ensure you have Node.js installed. You can download it from nodejs.org.
+
+Steps - 
+
+1. npm install
+2. Enter bitcoin, sepolia private key in cmd
+3. press 1 for btc to wbtc or 2 for wbtc to btc
